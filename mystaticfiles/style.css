@@ -1,0 +1,13 @@
+.body{
+    background-color: rgb(223, 223, 223);
+    font-family: poppins !important ;
+}
+
+.navbar{
+    background-color: white;
+    padding: 1.25em !important;
+    padding-left: 2em !important;
+    font-size: 1.3em;
+    font-weight: 700;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+}
