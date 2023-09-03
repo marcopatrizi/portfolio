@@ -11,21 +11,24 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import environ 
+import os
+
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+DEBUG = env('DEBUG')
+SECRET_KEY = env('SECRET_KEY')
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-hxh2va#u3l#e)8&+)uc*w5!q5=nmob_*45n4p+95vk#vk80kcy'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1']
+if DEBUG:
+    ALLOWED_HOSTS = [".localhost", "127.0.0.1", "[::1]"]
+else:
+    ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -68,8 +71,10 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'portfolio_marco.wsgi.app'
-
+if env('NAME') == 'dev':
+    WSGI_APPLICATION = 'yourapp.wsgi.app'
+else:
+    WSGI_APPLICATION = 'yourapp.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -123,6 +128,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static"
-]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+
+STATIC_ROOT = os.path.join(
+    BASE_DIR, 'staticfiles', 'static')
