@@ -1,13 +1,41 @@
 .body{
     background-color: rgb(241, 241, 241);
-    font-family: poppins !important ;
+    font-family: 'Poppins';
 }
 
 .navbar{
     background-color: white;
     padding: 1.25em !important;
     padding-left: 2em !important;
-    font-size: 1.3em;
+    font-size: 1em;
     font-weight: 700;
     box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+}
+
+.hero{
+    background-color: white;
+    padding: 1.5em;
+    height: 30rem;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.heroText{
+    vertical-align: baseline;
+}
+.immagine{
+    background-color: rgb(192, 192, 192);
+    margin: 0.5rem;
+    border-radius: 1.5rem;
+    width: 50%;
+    aspect-ratio: 1;
+    margin:0;
+    
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 7rem;
 }
