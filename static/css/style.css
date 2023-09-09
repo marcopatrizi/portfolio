@@ -17,25 +17,14 @@
     padding: 1.5em;
     height: 30rem;
     border-radius: 2rem;
-    display: flex;
-    justify-content: space-between;
 }
 
-.heroText{
-    vertical-align: baseline;
-}
 .immagine{
-    background-color: rgb(192, 192, 192);
-    margin: 0.5rem;
     border-radius: 1.5rem;
-    width: 50%;
+    max-height: 400px !important;
+    max-width: 400px !important;
     aspect-ratio: 1;
-    margin:0;
-    
 }
-.container{
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    padding: 7rem;
+.cont{
+
 }
