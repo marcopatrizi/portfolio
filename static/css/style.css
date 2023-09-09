@@ -15,14 +15,13 @@
 .hero{
     background-color: white;
     padding: 1.5em;
-    height: 30rem;
     border-radius: 2rem;
 }
 
 .immagine{
-    border-radius: 1.5rem;
-    max-height: 400px !important;
-    max-width: 400px !important;
+    border-radius: 50%;
+    max-height: 250px;
+    max-width: 250px;
     aspect-ratio: 1;
 }
 .cont{
